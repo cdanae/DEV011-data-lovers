@@ -50,3 +50,4 @@ header{
   .imagenPokemon {
     max-width: 100%; /* Evitar que la imagen se agrande más allá de su tamaño original */
     height: auto; /* Mantener la relación de aspecto original de la imagen */
+  }

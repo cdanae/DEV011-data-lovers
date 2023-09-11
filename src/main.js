@@ -1,6 +1,6 @@
 /// Importa los datos de Pokémon desde el archivo "pokemon.js"
 import pokemon from "./data/pokemon/pokemon.js";
-console.log(pokemon);
+
 // Función para construir y agregar las cartas de Pokémon al contenedor
 function construirCartas(data) {
   // Selecciona el contenedor con el id "listaPokemon"
@@ -15,11 +15,11 @@ function construirCartas(data) {
 
     // Crea la estructura de la tarjeta del Pokémon aquí
     const cartaPokemon = `
-    <div class="tarjeta" itemscope itemtype="pokemon">
-        <dl>
+    <div class="tarjeta-container" itemscope itemtype="pokemon">
+        <dl class="tarjeta">
             <dd itemprop="name">${pokemon.name}</dd>
             <dd itemprop="image">
-            <img src="${pokemon.img}" alt="${pokemon.name}">
+                <img src="${pokemon.img}" alt="${pokemon.name}">
             </dd>
         </dl>
     </div>

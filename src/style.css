@@ -1,9 +1,52 @@
+body {
+    text-align: center; /
+  }
+  
+  img {
+    max-width: 20%;
+    height:auto; 
+    display:flex; 
+    margin: 0 auto; 
+    padding: 20px; 
+  }
+
 header{
     text-align:center;
-    padding: 20px;
+    padding: 5px;
     background-color: #f2f2f2;
     position: sticky;
     top: 0;
-    background-size: cover;
+    background-size:contain;
 }
 
+.tarjeta {
+    width: 200px; /* Ancho deseado para la tarjeta */
+    border: 1px solid #ccc; /* Borde de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+    margin: 20px; /* Margen alrededor de la tarjeta (ajusta según tu diseño) */
+    display: inline-block; /* Para que las tarjetas se muestren en línea */
+    vertical-align: top; /* Alinear las tarjetas en la parte superior */
+  }
+  
+  /* Estilos para la parte frontal de la tarjeta */
+  .front {
+    background-color: #f0f0f0; /* Color de fondo de la parte frontal */
+    padding: 20px; /* Espaciado dentro de la parte frontal */
+  }
+  
+  /* Estilos para la parte trasera de la tarjeta */
+  .back {
+    background-color: #e0e0e0; /* Color de fondo de la parte trasera */
+    padding: 20px; /* Espaciado dentro de la parte trasera */
+    display: none; /* Oculta inicialmente la parte trasera */
+  }
+  
+  /* Estilo para el texto en la parte trasera */
+  .back p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+  }
+  
+  /* Estilo para la imagen dentro de la tarjeta */
+  .imagenPokemon {
+    max-width: 100%; /* Evitar que la imagen se agrande más allá de su tamaño original */
+    height: auto; /* Mantener la relación de aspecto original de la imagen */

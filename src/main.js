@@ -1,4 +1,3 @@
-
 /// Importa los datos de Pokémon desde el archivo "pokemon.js"
 import pokemon from "./data/pokemon/pokemon.js";
 console.log(pokemon);

@@ -12,13 +12,18 @@ function construirCartas(data) {
     // Crea un elemento <li> para cada Pokémon
     const li = document.createElement('li');
     li.setAttribute('itemscope', '');
-    li.setAttribute('itemtype', 'http://schema.org/Pokemon');
+    li.setAttribute('itemtype', 'pokemon');
 
     // Crea la estructura de la tarjeta del Pokémon aquí
     const cartaPokemon = `
-      <div class="tarjeta">
-        <!-- Contenido de la tarjeta aquí -->
-      </div>
+    <div class="tarjeta" itemscope itemtype="pokemon">
+        <dl>
+            <dd itemprop="name">${pokemon.name}</dd>
+            <dd itemprop="image">
+            <img src="${pokemon.img}" alt="${pokemon.name}">
+            </dd>
+        </dl>
+    </div>
     `;
 
     li.innerHTML = cartaPokemon;

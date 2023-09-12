@@ -6,22 +6,57 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 2rem;
 }
+
+header{
+  text-align:center;
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+  height: 280px;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 20px;
+  font-size: 60px;
+  color: #FECD2B;
+  text-shadow: 2px 2px #385CAA;
+}
   
-img {
-  max-width: 20%;
+header img {
+  max-width: 40%;
   height:auto; 
   display:flex; 
   margin: 0 auto; 
   padding: 20px; 
 }
 
+h2 {
+  margin: 0;
+  padding-top: 20px;
+  font-size: 40px;
+  color: #FECD2B;
+  text-shadow: 2px 2px #385CAA;
+}
+
+.tarjeta-container {
+  width: 100%; /* Ancho deseado para la tarjeta */
+  height: 350px;
+  border: 1px solid #ccc; /* Borde de la tarjeta */
+  box-shadow: rgb(31 63 223 / 50%) 2px 4px 8px; /* Sombra de la tarjeta */
+  margin: 20px; /* Margen alrededor de la tarjeta (ajusta según tu diseño) */
+  border-radius: 20px;
+  background: radial-gradient(circle, rgba(241,241,241,1) 35%, rgba(139,198,245,1) 100%) ;
+}
+
 /* Estilo para el contenedor de la carta */
 .tarjeta {
-  width: 200px;
+  width: 100%;
   height: 300px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  display: inline-block;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-weight: bold;
   margin: 0;
@@ -49,17 +84,8 @@ img {
 .back {
   display: none;
 }
-header{
-  text-align:center;
-  background-color: #f2f2f2;
-  position: sticky;
-  top: 0;
-  height: 280px;
-}
-h1 {
-  margin: 0;
-  padding-top: 20px;
-}
+
+
 main {
   width: 80%;
   margin: 0 auto;
@@ -83,13 +109,7 @@ li {
 dd {
   margin: 0;
 }
-.tarjeta-container {
-  width: 100%; /* Ancho deseado para la tarjeta */
-  border: 1px solid #ccc; /* Borde de la tarjeta */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
-  margin: 20px; /* Margen alrededor de la tarjeta (ajusta según tu diseño) */
 
-}
 
 /* .tarjeta{
   display: flex;

@@ -11,11 +11,53 @@
   </head>
   <body>
     <header>
-      <h1>Pokédex</h1>
       <img src="https://www.pngmart.com/files/2/Pokemon-Go-PNG-Transparent-Image.png" alt="Pokémon Go">
       <h1>Pokédex</h1>
       
       <div class="btn-container">
+        <nav>
+          <ul>
+              <li>
+                  <div class="dropdown">
+                      <button>Filtrar</button>
+                      <ul id="dropdownMenu">
+                          <li>
+                            <label for="tipo">Por tipo</label>
+                            <select id="tipo" data-testid="select-filter">
+                              <option value="steel">Acero</option>
+                              <option value="water">Agua</option>
+                              <option value="bug">Bicho</option>
+                              <option value="dragon">Dragón</option>
+                              <option value="electric">Eléctrico</option>
+                              <option value="ghost">Fantasma</option>
+                              <option value="fire">Fuego</option>
+                              <option value="fairy">Hada</option>
+                              <option value="ice">Hielo</option>
+                              <option value="fighting">Lucha</option>
+                              <option value="normal">Normal</option>
+                              <option value="grass">Planta</option>
+                              <option value="psychic">Psíquico</option>
+                              <option value="rock">Roca</option>
+                              <option value="dark">Siniestro</option>
+                              <option value="ground">Tierra</option>
+                              <option value="poison">Veneno</option>
+                              <option value="flying">Volador</option>
+                            </select>
+                          </li>
+
+                          <li>
+                            <label for="region">Por región</label>
+                            <select id="region" data-testid="select-filter">
+                              <option value="kanto">Kanto</option>
+                              <option value="johto">Johto</option>
+                            </select>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
+        </nav>
+        
         <div class="ordenar-dropdown">
           <button id="ordenar-button" data-testid="button-ordenar">Ordenar</button>
           <div class="ordenar-options" id="ordenar-options">
@@ -30,7 +72,6 @@
 
     <main id="root">
       <h2>Lista de Pokémon</h2>
-      <div id="root"></div>
       <ul id="listaPokemon"></ul>
     </main>
 

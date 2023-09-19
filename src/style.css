@@ -199,12 +199,6 @@ dd {
   margin: 0;
 }
 
-@media (max-width: 480px) {
-  .tarjeta-container {
-    width: 100%; 
-  }
-}
-
 @media (min-width: 768px) {
   .tarjeta-container {
     width: 48%; 

@@ -1,10 +1,13 @@
 // Importa los datos de Pokémon desde el archivo "pokemon.js"
 import pokemon from "./data/pokemon/pokemon.js";
+import { filterBy } from './dataFunctions.js';
+
 
 // Función para construir y agregar las cartas de Pokémon al contenedor
 function construirCartas(data) {
   // Selecciona el contenedor con el id "listaPokemon"
   const listaPokemon = document.getElementById('listaPokemon');
+  listaPokemon.innerHTML = ''
 
   // Itera sobre los datos de Pokémon
   data.pokemon.forEach(pokemon => {
@@ -46,6 +49,21 @@ function construirCartas(data) {
   });
 }
 
+const selectType = document.getElementById('tipo')
+const selectRegion = document.getElementById('region')
+selectRegion.addEventListener('change', () => {
+  const selectedRegionOption = selectRegion.value
+  const pokemonFilter = filterBy(pokemon.pokemon, 'region', selectedRegionOption)
+
+  construirCartas({pokemon: pokemonFilter})
+})
+
+selectType.addEventListener('change', () => {
+  const selectedTypeOption = selectType.value
+  const pokemonFilter = filterBy(pokemon.pokemon, 'tipo', selectedTypeOption)
+
+  construirCartas({pokemon: pokemonFilter})
+})
 
 function ordenarPokemon(property, order) {
   const sortedPokemon = [...pokemon.pokemon]; 
@@ -63,10 +81,7 @@ function ordenarPokemon(property, order) {
   sortedPokemon.sort(compareFunction);
 
   
-  const listaPokemon = document.getElementById('listaPokemon');
-  listaPokemon.innerHTML = '';
 
-  
   construirCartas({ pokemon: sortedPokemon });
 }
 
@@ -76,7 +91,6 @@ construirCartas(pokemon);
 
 const ordenarButton = document.getElementById('ordenar-button');
 const ordenarOptions = document.getElementById('ordenar-options');
-
 
 ordenarButton.addEventListener('click', () => {
   ordenarOptions.classList.toggle('mostrar'); 

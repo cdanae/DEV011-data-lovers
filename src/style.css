@@ -9,66 +9,111 @@ body {
 
 header{
   text-align:center;
-  background-color: #f2f2f2;
-  position: sticky;
+  background-color: #254A8F ;
+  position:relative;
   top: 0;
-  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:auto;
+  padding: 20px;
 }
 
 h1 {
   margin: 0;
   padding-top: 20px;
   font-size: 60px;
-  color: #FECD2B;
+  color: #FFF;
   text-shadow: 2px 2px #385CAA;
 }
   
 header img {
-  max-width: 40%;
-  height:auto; 
-  display:flex; 
-  margin: 0 auto; 
-  padding: 20px; 
+  max-width: 30%;
+  height: auto;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  margin: 10px;
+  padding: 10px;
 }
 
 h2 {
   margin: 0;
   padding-top: 20px;
   font-size: 40px;
-  color: #FECD2B;
-  text-shadow: 2px 2px #385CAA;
+  color: #000000;
+}
+
+
+.ordenar-dropdown button {
+  background-color: #4270c4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.ordenar-options {
+  display: none;
+  position: absolute;
+  background-color: #4270c4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.ordenar-options.mostrar {
+  display: block;
+}
+
+.ordenar-options button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.ordenar-options button:hover {
+  background-color: #254A8F;
 }
 
 .tarjeta-container {
-  width: 100%; /* Ancho deseado para la tarjeta */
-  height: 350px;
-  border: 1px solid #ccc; /* Borde de la tarjeta */
-  box-shadow: rgb(31 63 223 / 50%) 2px 4px 8px; /* Sombra de la tarjeta */
-  margin: 20px; /* Margen alrededor de la tarjeta (ajusta según tu diseño) */
+  width: 23%; 
+  height: 400px;
+  border: 1px solid #ccc; 
+  box-shadow: rgb(31 63 223 / 50%) 2px 4px 8px; 
+  margin: 20px; 
   border-radius: 20px;
   background: radial-gradient(circle, rgba(241,241,241,1) 35%, rgba(139,198,245,1) 100%) ;
+  align-items:flex-start;
 }
 
-/* Estilo para el contenedor de la carta */
+
 .tarjeta {
   width: 100%;
-  height: 300px;
+  height: 350px;
   display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction:column;
+  align-items:center;
   text-align: center;
   font-weight: bold;
   margin: 0;
   text-transform: uppercase;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 /* Estilo para la imagen del Pokémon */
 .pokemon.img {
-  width: 150px;
-  height: 150px;
+  max-width: 100px;
+  height: auto;
   margin: 10px auto;
-  display: block;
+  display:contents;
   align-items: center;
   text-align: center;
 }
@@ -78,6 +123,50 @@ h2 {
   text-align: center;
   font-weight: bold;
   margin: 0;
+}
+
+.caracteristicas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin-top: 20px;
+  padding: 0 10px; /* Espaciado interno en los lados de las características */
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
+
+/* Estilo para el contenedor de "resistant" y "weaknesses" */
+.resistant,
+.weaknesses {
+  width: 45%; /* Ocupa el ancho completo de la tarjeta */
+  text-align: left;
+}
+
+/* Estilo para las etiquetas "resistant" y "weaknesses" */
+.resistant p,
+.weaknesses p {
+  font-weight: bold;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Estilo para las listas de "resistant" y "weaknesses" */
+.resistant ul,
+.weaknesses ul {
+  list-style:none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Estilo para los elementos de la lista */
+.resistant ul li,
+.weaknesses ul li {
+  margin-bottom: 5px;
+  margin-top: 4px;
+  font-size: 14px;
+  text-transform: capitalize; 
 }
 
 /* Estilo para el reverso de la carta */
@@ -108,6 +197,23 @@ li {
 
 dd {
   margin: 0;
+}
+
+@media (max-width: 480px) {
+  .tarjeta-container {
+    width: 100%; 
+  }
+}
+
+@media (min-width: 768px) {
+  .tarjeta-container {
+    width: 48%; 
+    
+}
+#listaPokemon {
+  display: flex;
+  flex-wrap: wrap;
+}
 }
 
 

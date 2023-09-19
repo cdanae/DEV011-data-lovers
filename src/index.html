@@ -3,6 +3,7 @@
   <head>
   <meta charset="utf-8">
   <title>Data Lovers - Pokémon</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -10,16 +11,26 @@
   </head>
   <body>
     <header>
+      <h1>Pokédex</h1>
       <img src="https://www.pngmart.com/files/2/Pokemon-Go-PNG-Transparent-Image.png" alt="Pokémon Go">
       <h1>Pokédex</h1>
       
       <div class="btn-container">
-        
+        <div class="ordenar-dropdown">
+          <button id="ordenar-button" data-testid="button-ordenar">Ordenar</button>
+          <div class="ordenar-options" id="ordenar-options">
+            <button data-orden="num-asc">Número (Ascendente)</button>
+            <button data-orden="num-desc">Número (Descendente)</button>
+            <button data-orden="name-asc">Nombre (A - Z)</button>
+            <button data-orden="name-desc">Nombre (Z - A)</button>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="root">
       <h2>Lista de Pokémon</h2>
+      <div id="root"></div>
       <ul id="listaPokemon"></ul>
     </main>
 

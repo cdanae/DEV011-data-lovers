@@ -1,4 +1,4 @@
-/// Importa los datos de Pokémon desde el archivo "pokemon.js"
+// Importa los datos de Pokémon desde el archivo "pokemon.js"
 import pokemon from "./data/pokemon/pokemon.js";
 
 // Función para construir y agregar las cartas de Pokémon al contenedor
@@ -20,7 +20,21 @@ function construirCartas(data) {
             <dd itemprop="name">${pokemon.name}</dd>
             <dd itemprop="image">
                 <img src="${pokemon.img}" alt="${pokemon.name}">
-            </dd>
+            </dd>    
+            <div class="caracteristicas">
+            <div class="resistant">
+                <p>Resistant</p>
+                <ul>
+                    ${pokemon.resistant.map(resistant => `<li>${resistant}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="weaknesses">
+                <p>Weaknesses</p>
+                <ul>
+                    ${pokemon.weaknesses.map(weakness => `<li>${weakness}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
         </dl>
     </div>
     `;
@@ -32,5 +46,50 @@ function construirCartas(data) {
   });
 }
 
-// Llama a la función para construir las cartas de Pokémon pasando los datos importados
+
+function ordenarPokemon(property, order) {
+  const sortedPokemon = [...pokemon.pokemon]; 
+
+  
+  const compareFunction = (a, b) => {
+    if (order === 'asc') {
+      return a[property] > b[property] ? 1 : -1;
+    } else {
+      return a[property] < b[property] ? 1 : -1;
+    }
+  };
+
+  
+  sortedPokemon.sort(compareFunction);
+
+  
+  const listaPokemon = document.getElementById('listaPokemon');
+  listaPokemon.innerHTML = '';
+
+  
+  construirCartas({ pokemon: sortedPokemon });
+}
+
+
 construirCartas(pokemon);
+
+
+const ordenarButton = document.getElementById('ordenar-button');
+const ordenarOptions = document.getElementById('ordenar-options');
+
+
+ordenarButton.addEventListener('click', () => {
+  ordenarOptions.classList.toggle('mostrar'); 
+});
+
+
+ordenarOptions.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    const selectedOption = event.target.getAttribute('data-orden');
+    const [property, order] = selectedOption.split('-');
+    
+    ordenarPokemon(property, order); 
+    ordenarOptions.classList.remove('mostrar'); 
+  }
+});
+

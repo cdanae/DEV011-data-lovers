@@ -14,16 +14,15 @@
       <img src="https://www.pngmart.com/files/2/Pokemon-Go-PNG-Transparent-Image.png" alt="Pokémon Go">
       <h1>Pokédex</h1>
       
-      <div class="btn-container">
         <nav>
-          <ul>
-              <li>
+          <ul class="buttons-container">
+              <li class="li-btns">
                   <div class="dropdown">
-                      <button>Filtrar</button>
-                      <ul id="dropdownMenu">
-                          <li>
-                            <label for="tipo">Por tipo</label>
+                      <button id="filtrar-button">Filtrar</button>
+                      <ul id="filtrar-options" class="filtrar-options">
+                          <li class="li-btns">
                             <select id="tipo" data-testid="select-filter">
+                              <option disabled selected>Por tipo</option>
                               <option value="steel">Acero</option>
                               <option value="water">Agua</option>
                               <option value="bug">Bicho</option>
@@ -45,9 +44,9 @@
                             </select>
                           </li>
 
-                          <li>
-                            <label for="region">Por región</label>
+                          <li class="li-btns">
                             <select id="region" data-testid="select-filter">
+                              <option disabled selected>Por región</option>
                               <option value="kanto">Kanto</option>
                               <option value="johto">Johto</option>
                             </select>
@@ -55,19 +54,20 @@
                       </ul>
                   </div>
               </li>
+              <li class="li-btns">
+                <div class="dropdown">
+                  <button id="ordenar-button" data-testid="button-ordenar">Ordenar</button>
+                  <div class="ordenar-options" id="ordenar-options">
+                    <button data-orden="num-asc">Número (Ascendente)</button>
+                    <button data-orden="num-desc">Número (Descendente)</button>
+                    <button data-orden="name-asc">Nombre (A - Z)</button>
+                    <button data-orden="name-desc">Nombre (Z - A)</button>
+                  </div>
+                </div>
+              </li>
           </ul>
         </nav>
         
-        <div class="ordenar-dropdown">
-          <button id="ordenar-button" data-testid="button-ordenar">Ordenar</button>
-          <div class="ordenar-options" id="ordenar-options">
-            <button data-orden="num-asc">Número (Ascendente)</button>
-            <button data-orden="num-desc">Número (Descendente)</button>
-            <button data-orden="name-asc">Nombre (A - Z)</button>
-            <button data-orden="name-desc">Nombre (Z - A)</button>
-          </div>
-        </div>
-      </div>
     </header>
 
     <main id="root">

@@ -43,18 +43,22 @@ h2 {
   font-size: 40px;
   color: #000000;
 }
-
-
-.ordenar-dropdown button {
-  background-color: #4270c4;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
+nav {
+  width: 50%;
+}
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
 }
 
-.ordenar-options {
+.li-btns {
+  list-style: none;
+  align-items: center;
+}
+
+.filtrar-options {
   display: none;
   position: absolute;
   background-color: #4270c4;
@@ -63,7 +67,39 @@ h2 {
   z-index: 1;
 }
 
-.ordenar-options.mostrar {
+.dropdown button {
+  background-color: #4270c4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+select[data-testid="select-filter"] {
+  cursor: pointer;
+  background-color: #4270c4;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+select[data-testid="select-filter"]:hover {
+  cursor: pointer;
+  background-color: #254A8F;
+
+}
+
+
+.ordenar-options, .filtrar-options{
+  display: none;
+  position: absolute;
+  background-color: #4270c4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.mostrar {
   display: block;
 }
 
@@ -161,8 +197,8 @@ h2 {
 
 
 /* Estilo para los elementos de la lista */
-.resistant ul li,
-.weaknesses ul li {
+.resistant ul,
+.weaknesses ul {
   margin-bottom: 5px;
   margin-top: 4px;
   font-size: 14px;
@@ -187,7 +223,7 @@ ul{
   padding: 0;
 }
 
-li {
+.li-card {
   list-style: none;
   display: flex;
   flex-direction: column;

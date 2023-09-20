@@ -15,6 +15,7 @@ function construirCartas(data) {
     const li = document.createElement('li');
     li.setAttribute('itemscope', '');
     li.setAttribute('itemtype', 'pokemon');
+    li.setAttribute('class', 'li-card')
 
     // Crea la estructura de la tarjeta del Pokémon aquí
     const cartaPokemon = `
@@ -49,8 +50,14 @@ function construirCartas(data) {
   });
 }
 
+const filtrarButton = document.getElementById('filtrar-button');
+const filtrarOptions = document.getElementById('filtrar-options')
 const selectType = document.getElementById('tipo')
 const selectRegion = document.getElementById('region')
+
+filtrarButton.addEventListener('click', () => {
+  filtrarOptions.classList.toggle('mostrar')
+})
 selectRegion.addEventListener('change', () => {
   const selectedRegionOption = selectRegion.value
   const pokemonFilter = filterBy(pokemon.pokemon, 'region', selectedRegionOption)
@@ -64,6 +71,7 @@ selectType.addEventListener('change', () => {
 
   construirCartas({pokemon: pokemonFilter})
 })
+
 
 function ordenarPokemon(property, order) {
   const sortedPokemon = [...pokemon.pokemon]; 

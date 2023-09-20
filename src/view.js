@@ -1,14 +1,14 @@
 export const renderItems = (data) => {
 
-    // Selecciona el contenedor con el id "listaPokemon"
-    const listaPokemon = document.getElementById('listaPokemon');
-    listaPokemon.innerHTML = '';
+  // Selecciona el contenedor con el id "listaPokemon"
+  const listaPokemon = document.getElementById('listaPokemon');
+  listaPokemon.innerHTML = '';
 
-    data.pokemon.forEach(pokemon => {
-      const li = document.createElement('li');
-      li.setAttribute('itemscope', '');
-      li.setAttribute('itemtype', 'pokemon');
-      const cartaPokemon = `
+  data.pokemon.forEach(pokemon => {
+    const li = document.createElement('li');
+    li.setAttribute('itemscope', '');
+    li.setAttribute('itemtype', 'pokemon');
+    const cartaPokemon = `
       <div class="tarjeta-container" itemscope itemtype="pokemon">
           <dl class="tarjeta">
               <dd itemprop="name">${pokemon.name}</dd>
@@ -33,10 +33,10 @@ export const renderItems = (data) => {
       </div>
       `;
   
-      li.innerHTML = cartaPokemon;
+    li.innerHTML = cartaPokemon;
   
       
-      listaPokemon.appendChild(li);
-    });
-  }
+    listaPokemon.appendChild(li);
+  });
+}
   

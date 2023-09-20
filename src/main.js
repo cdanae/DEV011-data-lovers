@@ -2,6 +2,7 @@
 import pokemon from "./data/pokemon/pokemon.js";
 import { filterBy } from './dataFunctions.js';
 
+import { renderItems } from "./view.js";
 
 // Función para construir y agregar las cartas de Pokémon al contenedor
 function construirCartas(data) {

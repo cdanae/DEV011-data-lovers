@@ -117,15 +117,26 @@ select[data-testid="select-filter"]:hover {
   background-color: #254A8F;
 }
 
+#listaPokemon {
+  display:flex;
+  flex-direction: column;
+  
+}
+
 .tarjeta-container {
-  width: 23%; 
-  height: 400px;
+  width: 50%; 
+  height: 350px;
   border: 1px solid #ccc; 
   box-shadow: rgb(31 63 223 / 50%) 2px 4px 8px; 
-  margin: 20px; 
-  border-radius: 20px;
+  margin: 50px 50px  0; 
+  border-radius: 1rem;
   background: radial-gradient(circle, rgba(241,241,241,1) 35%, rgba(139,198,245,1) 100%) ;
   align-items:flex-start;
+  gap: 1rem;
+  padding-block: 1rem;
+  position: relative;
+  overflow: hidden;
+
 }
 
 
@@ -149,9 +160,11 @@ select[data-testid="select-filter"]:hover {
   max-width: 100px;
   height: auto;
   margin: 10px auto;
-  display:contents;
+  padding: 1rem;
+  display:flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 /* Estilo para el número y nombre del Pokémon */
@@ -163,13 +176,15 @@ select[data-testid="select-filter"]:hover {
 
 .caracteristicas {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start; 
   margin-top: 20px;
-  padding: 0 10px; /* Espaciado interno en los lados de las características */
+  padding: 0 10px; 
   position: absolute;
   bottom: 0;
   width: 90%;
+  gap: 1rem;
+  padding-inline: 1rem;
 }
 
 /* Estilo para el contenedor de "resistant" y "weaknesses" */
@@ -177,6 +192,7 @@ select[data-testid="select-filter"]:hover {
 .weaknesses {
   width: 45%; /* Ocupa el ancho completo de la tarjeta */
   text-align: left;
+  
 }
 
 /* Estilo para las etiquetas "resistant" y "weaknesses" */
@@ -184,7 +200,13 @@ select[data-testid="select-filter"]:hover {
 .weaknesses p {
   font-weight: bold;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  display: flex;
+  
+  
 }
 
 /* Estilo para las listas de "resistant" y "weaknesses" */
@@ -193,6 +215,7 @@ select[data-testid="select-filter"]:hover {
   list-style:none;
   padding: 0;
   margin: 0;
+  
 }
 
 
@@ -237,12 +260,13 @@ dd {
 
 @media (min-width: 768px) {
   .tarjeta-container {
-    width: 48%; 
+    width: 70%; 
     
 }
 #listaPokemon {
-  display: flex;
-  flex-wrap: wrap;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: row;
 }
 }
 

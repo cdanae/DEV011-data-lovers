@@ -7,6 +7,7 @@ export const renderItems = (data) => {
     const li = document.createElement('li');
     li.setAttribute('itemscope', '');
     li.setAttribute('itemtype', 'pokemon');
+    li.setAttribute('class', 'li-card');
     const cartaPokemon = `
       <div class="tarjeta-container" itemscope itemtype="pokemon">
           <dl class="tarjeta">

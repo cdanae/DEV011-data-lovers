@@ -3,7 +3,6 @@ import data from "./data/pokemon/pokemon.js";
 import { renderItems } from "./view.js";
 import { filterBy,ordenarPokemon } from './dataFunctions.js';
 
-console.log('ver pok: ', data);
 const root = document.querySelector('#root')
 root.appendChild(renderItems(data.pokemon));
 
@@ -30,7 +29,7 @@ selectType.addEventListener('change', () => {
   renderItems(pokemonFilter );
 });
 
-renderItems(data);
+
 
 const ordenarButton = document.getElementById('ordenar-button');
 const ordenarOptions = document.getElementById('ordenar-options');

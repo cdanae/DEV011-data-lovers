@@ -21,7 +21,9 @@
                       <button id="filtrar-button">Filtrar</button>
                       <ul id="filtrar-options" class="filtrar-options">
                           <li class="li-btns">
-                            <select id="tipo" data-testid="select-filter">
+                            <label for="tipo"></label>
+                              <select id="tipo" data-testid="select-filter" name="type">
+                            
                               <option disabled selected>Por tipo</option>
                               <option value="steel">Acero</option>
                               <option value="water">Agua</option>
@@ -45,7 +47,8 @@
                           </li>
 
                           <li class="li-btns">
-                            <select id="region" data-testid="select-filter">
+                            <label for="region"> </label>
+                            <select id="region" data-testid="select-filter" name="region">
                               <option disabled selected>Por región</option>
                               <option value="kanto">Kanto</option>
                               <option value="johto">Johto</option>

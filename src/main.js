@@ -1,9 +1,11 @@
 // Importa los datos de Pokémon desde el archivo "pokemon.js"
-import pokemon from "./data/pokemon/pokemon.js";
+import data from "./data/pokemon/pokemon.js";
 import { renderItems } from "./view.js";
 import { filterBy,ordenarPokemon } from './dataFunctions.js';
 
-renderItems(pokemon);
+console.log('ver pok: ', data);
+const root = document.querySelector('#root')
+root.appendChild(renderItems(data.pokemon));
 
 const filtrarButton = document.getElementById('filtrar-button');
 const filtrarOptions = document.getElementById('filtrar-options');
@@ -16,19 +18,19 @@ filtrarButton.addEventListener('click', () => {
 
 selectRegion.addEventListener('change', () => {
   const selectedRegionOption = selectRegion.value;
-  const pokemonFilter = filterBy(pokemon.pokemon, 'region', selectedRegionOption);
+  const pokemonFilter = filterBy(data, 'region', selectedRegionOption);
 
-  renderItems({ pokemon: pokemonFilter });
+  renderItems(pokemonFilter);
 });
 
 selectType.addEventListener('change', () => {
   const selectedTypeOption = selectType.value;
-  const pokemonFilter = filterBy(pokemon.pokemon, 'tipo', selectedTypeOption);
+  const pokemonFilter = filterBy(data, 'tipo', selectedTypeOption);
 
-  renderItems({ pokemon: pokemonFilter });
+  renderItems(pokemonFilter );
 });
 
-renderItems(pokemon);
+renderItems(data);
 
 const ordenarButton = document.getElementById('ordenar-button');
 const ordenarOptions = document.getElementById('ordenar-options');
@@ -42,8 +44,8 @@ ordenarOptions.addEventListener('click', (event) => {
     const selectedOption = event.target.getAttribute('data-orden');
     const [property, order] = selectedOption.split('-');
 
-    const sortedPokemon = (ordenarPokemon(pokemon.pokemon, property, order));
-    renderItems({ pokemon: sortedPokemon });
+    const sortedPokemon = (ordenarPokemon(data, property, order));
+    renderItems( sortedPokemon );
     ordenarOptions.classList.remove('mostrar');
   }
 });

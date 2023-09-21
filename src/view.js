@@ -1,10 +1,9 @@
 export const renderItems = (data) => {
-
   // Selecciona el contenedor con el id "listaPokemon"
   const listaPokemon = document.getElementById('listaPokemon');
   listaPokemon.innerHTML = '';
 
-  data.pokemon.forEach(pokemon => {
+  data.forEach(pokemon => {
     const li = document.createElement('li');
     li.setAttribute('itemscope', '');
     li.setAttribute('itemtype', 'pokemon');
@@ -38,5 +37,6 @@ export const renderItems = (data) => {
       
     listaPokemon.appendChild(li);
   });
+  return listaPokemon;
 }
   

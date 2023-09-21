@@ -30,7 +30,7 @@ selectType.addEventListener('change', () => {
   renderItems(pokemonFilter );
 });
 
-renderItems(data);
+
 
 const ordenarButton = document.getElementById('ordenar-button');
 const ordenarOptions = document.getElementById('ordenar-options');

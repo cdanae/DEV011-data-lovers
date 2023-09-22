@@ -4,7 +4,8 @@ import { renderItems } from "./view.js";
 import { filterBy,ordenarPokemon } from './dataFunctions.js';
 
 const root = document.querySelector('#root')
-root.appendChild(renderItems(data.pokemon));
+const dataPokemon = data.pokemon;
+root.appendChild(renderItems(dataPokemon));
 
 const filtrarButton = document.getElementById('filtrar-button');
 const filtrarOptions = document.getElementById('filtrar-options');
@@ -17,16 +18,18 @@ filtrarButton.addEventListener('click', () => {
 
 selectRegion.addEventListener('change', () => {
   const selectedRegionOption = selectRegion.value;
-  const pokemonFilter = filterBy(data, 'region', selectedRegionOption);
+  const pokemonFilter = filterBy(dataPokemon, 'region', selectedRegionOption);
 
   renderItems(pokemonFilter);
+  filtrarOptions.classList.remove('mostrar');
 });
 
 selectType.addEventListener('change', () => {
   const selectedTypeOption = selectType.value;
-  const pokemonFilter = filterBy(data, 'tipo', selectedTypeOption);
+  const pokemonFilter = filterBy(dataPokemon, 'tipo', selectedTypeOption);
 
   renderItems(pokemonFilter );
+  filtrarOptions.classList.remove('mostrar');
 });
 
 
@@ -43,7 +46,7 @@ ordenarOptions.addEventListener('click', (event) => {
     const selectedOption = event.target.getAttribute('data-orden');
     const [property, order] = selectedOption.split('-');
 
-    const sortedPokemon = (ordenarPokemon(data, property, order));
+    const sortedPokemon = (ordenarPokemon(dataPokemon, property, order));
     renderItems( sortedPokemon );
     ordenarOptions.classList.remove('mostrar');
   }

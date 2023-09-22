@@ -1,6 +1,6 @@
 export const filterBy = (data, filterBy, value) => {
   let pokemonFilter = [];
-
+console.log(data);
   switch (filterBy) {
   case 'region':
     pokemonFilter = data.filter(

@@ -48,3 +48,31 @@ ordenarOptions.addEventListener('click', (event) => {
     ordenarOptions.classList.remove('mostrar');
   }
 });
+
+const statsButton = document.getElementById('stats-button');
+statsButton.addEventListener('click', () => {
+
+  function findAllSpecialAttacks(pokemon) {
+    return pokemon['special-attack'].map(attack => ({
+      attack: attack.name,
+      power: parseInt(attack['base-damage'])
+    }));
+  }
+  
+  const allSpecialAttacks = data.pokemon.flatMap(pokemon => findAllSpecialAttacks(pokemon));
+  
+  // Utiliza reduce() para encontrar los 15 ataques especiales más poderosos sin duplicados
+  const top15SpecialAttacks = allSpecialAttacks.reduce((acc, attack) => {
+    const existingAttack = acc.find(item => item.attack === attack.attack);
+    if (!existingAttack) {
+      acc.push(attack);
+    } else if (attack.power > existingAttack.power) {
+      existingAttack.power = attack.power;
+      existingAttack.pokemon = attack.pokemon;
+    }
+    return acc;
+  }, []).sort((a, b) => b.power - a.power).slice(0, 15);
+  
+  // Imprime la lista de los 15 ataques especiales más poderosos sin duplicados
+  console.log(top15SpecialAttacks);
+})

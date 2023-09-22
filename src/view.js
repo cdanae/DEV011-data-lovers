@@ -15,6 +15,7 @@ export const renderItems = (data) => {
               <dd itemprop="image">
                   <img src="${pokemon.img}" alt="${pokemon.name}">
               </dd>    
+              <dd itemprop="num">${pokemon.num}</dd>
               <div class="caracteristicas">
               <div class="resistant">
                   <p>Resistant</p>

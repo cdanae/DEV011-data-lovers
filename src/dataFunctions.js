@@ -42,3 +42,28 @@ export const ordenarPokemon = (data,property, order) => {
   return sortedPokemon;
 };
 
+export const computeStats = (data) => {
+  function findAtaquesEspeciales(pokemon) {
+    return pokemon['special-attack'].map(attack => ({
+      attack: attack.name,
+      damage: attack['base-damage']
+    }));
+  }
+  
+  const ataques= data.pokemon.flatMap(pokemon => findAtaquesEspeciales(pokemon));
+
+  const ataquesEspeciales = ataques.reduce((acc, attack) => {
+    const existingAttack = acc.find(item => item.attack === attack.attack);
+    console.log(existingAttack);
+    if (!existingAttack) {
+      acc.push(attack);
+    } else if (attack.damage > existingAttack.damage) {
+      existingAttack.damage = attack.damage;
+      existingAttack.pokemon = attack.pokemon;
+    }
+    return acc;
+  }, []).sort((a, b) => b.damage - a.damage).slice(0, 15);
+  
+  return ataquesEspeciales
+}
+

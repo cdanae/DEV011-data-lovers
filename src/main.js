@@ -1,7 +1,7 @@
 // Importa los datos de Pokémon desde el archivo "pokemon.js"
 import data from "./data/pokemon/pokemon.js";
 import { renderItems } from "./view.js";
-import { filterBy,ordenarPokemon } from './dataFunctions.js';
+import { filterBy,ordenarPokemon, computeStats } from './dataFunctions.js';
 
 const root = document.querySelector('#root')
 root.appendChild(renderItems(data.pokemon));
@@ -49,30 +49,30 @@ ordenarOptions.addEventListener('click', (event) => {
   }
 });
 
+
 const statsButton = document.getElementById('stats-button');
 statsButton.addEventListener('click', () => {
 
-  function findAllSpecialAttacks(pokemon) {
-    return pokemon['special-attack'].map(attack => ({
-      attack: attack.name,
-      power: parseInt(attack['base-damage'])
-    }));
-  }
+  const main = document.querySelector('main')
+  const statsContainer = `
+    <h2>Ataques especiales más poderosos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ataque</th>
+          <th>Daño</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${computeStats(data).map((attack) => `
+          <tr>
+              <td>${attack.attack}</td>
+              <td>${attack.damage}</td>
+          </tr>
+      `).join('')}
+      </tbody>
+    </table>
+  `
+  main.innerHTML = statsContainer
   
-  const allSpecialAttacks = data.pokemon.flatMap(pokemon => findAllSpecialAttacks(pokemon));
-  
-  // Utiliza reduce() para encontrar los 15 ataques especiales más poderosos sin duplicados
-  const top15SpecialAttacks = allSpecialAttacks.reduce((acc, attack) => {
-    const existingAttack = acc.find(item => item.attack === attack.attack);
-    if (!existingAttack) {
-      acc.push(attack);
-    } else if (attack.power > existingAttack.power) {
-      existingAttack.power = attack.power;
-      existingAttack.pokemon = attack.pokemon;
-    }
-    return acc;
-  }, []).sort((a, b) => b.power - a.power).slice(0, 15);
-  
-  // Imprime la lista de los 15 ataques especiales más poderosos sin duplicados
-  console.log(top15SpecialAttacks);
 })

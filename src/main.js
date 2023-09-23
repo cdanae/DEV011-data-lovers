@@ -83,7 +83,7 @@ statsButton.addEventListener('click', () => {
         </tr>
       </thead>
       <tbody>
-        ${computeStats(data).map((attack) => `
+        ${computeStats(dataPokemon).map((attack) => `
           <tr>
               <td>${attack.attack}</td>
               <td>${attack.damage}</td>

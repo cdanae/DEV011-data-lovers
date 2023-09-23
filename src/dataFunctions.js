@@ -50,7 +50,7 @@ export const computeStats = (data) => {
     }));
   }
   
-  const ataques= data.pokemon.flatMap(pokemon => findAtaquesEspeciales(pokemon));
+  const ataques= data.flatMap(pokemon => findAtaquesEspeciales(pokemon));
 
   const ataquesEspeciales = ataques.reduce((acc, attack) => {
     const existingAttack = acc.find(item => item.attack === attack.attack);

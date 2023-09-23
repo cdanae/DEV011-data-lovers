@@ -68,6 +68,9 @@
                   </div>
                 </div>
               </li>
+              <li class="li-btns">
+                <button id="stats-button">Estadísticas</button>
+              </li>
           </ul>
         </nav>
         
@@ -75,8 +78,20 @@
 
     <main >
       <h2>Lista de Pokémon</h2>
-      <div id="root"><ul id="listaPokemon"></ul></div>
-      
+      <div id="root"><ul id="listaPokemon"></ul></div>  
+        
+      <div id="tablaContainer" style="display: none;">
+        <h2>Ataques especiales más poderosos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ataque</th>
+                    <th>Poder</th>
+                </tr>
+            </thead>
+            <tbody id="tablaBody"></tbody>
+        </table>
+    </div>  
     </main>
 
     <footer>

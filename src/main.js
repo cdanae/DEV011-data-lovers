@@ -76,13 +76,13 @@ statsButton.addEventListener('click', () => {
   const statsContainer = `
     <h2>Ataques especiales más poderosos</h2>
     <table>
-      <thead>
+      <thead class= "estilos-tabla">
         <tr>
           <th>Ataque</th>
           <th>Daño</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class= "estilos-tabla">
         ${computeStats(dataPokemon).map((attack) => `
           <tr>
               <td>${attack.attack}</td>
@@ -95,3 +95,22 @@ statsButton.addEventListener('click', () => {
   main.innerHTML = statsContainer
   
 })
+const tiposDePokemon = { fire: "🔥",
+water: "💧",
+grass: "🌿",
+electric: "⚡",
+ground: "🌍",
+flying: "🦅",
+poison: "☠️",
+psychic: "🔮",
+fighting: "🥊",
+ice: "❄️",
+rock: "🪨",
+bug: "🐞",
+dragon: "🐉",
+ghost: "👻",
+steel: "🔩",
+normal: "⚪",
+dark: "🌑",
+fairy: "🧚‍♀️"
+}

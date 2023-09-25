@@ -28,7 +28,7 @@ h1 {
 }
   
 header img {
-  max-width: 30%;
+  max-width: 25%;
   height: auto;
   position: absolute; 
   top: 0; 
@@ -55,7 +55,8 @@ nav {
 
 .li-btns {
   list-style: none;
-  align-items: center;
+  margin: 10px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25)
 }
 
 .filtrar-options {
@@ -117,15 +118,33 @@ select[data-testid="select-filter"]:hover {
   background-color: #254A8F;
 }
 
+.estilos-tabla {
+  background-color:#EACA4C ;
+  color: #254A8F;
+  border-radius: 8px;
+  margin: 120px;
+  padding: 20px;
+  
+}
+table {
+  margin: auto;
+  width: 70%;
+  margin-top: 45px;
+  text-transform:capitalize;
+}
+
+
 #listaPokemon {
   display:flex;
   flex-direction: column;
-  
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .tarjeta-container {
   width: 50%; 
-  height: 350px;
+  height: auto;
   border: 1px solid #ccc; 
   box-shadow: rgb(31 63 223 / 50%) 2px 4px 8px; 
   margin: 50px 50px  0; 
@@ -141,8 +160,8 @@ select[data-testid="select-filter"]:hover {
 
 
 .tarjeta {
-  width: 100%;
-  height: 350px;
+  width: 380px;
+  height: 500px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -269,8 +288,18 @@ dd {
   flex-direction: row;
 }
 }
-
-
+@media (min-width: 1024px) {
+  header img {
+    width: 285px; 
+    height: 178px;
+    
+}
+}
+footer {
+  background-color:#254A8F ;
+  color:#FFF;
+  font-size: 14px;
+}
 /* .tarjeta{
   display: flex;
   flex-direction: column;

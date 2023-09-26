@@ -1,6 +1,6 @@
 export const filterBy = (data, filterBy, value) => {
   let pokemonFilter = [];
-console.log(data);
+
   switch (filterBy) {
   case 'region':
     pokemonFilter = data.filter(
@@ -46,7 +46,7 @@ export const computeStats = (data) => {
   function findAtaquesEspeciales(pokemon) {
     return pokemon['special-attack'].map(attack => ({
       attack: attack.name,
-      damage: attack['base-damage']
+      damage: parseFloat(attack['base-damage'])
     }));
   }
   
@@ -54,7 +54,7 @@ export const computeStats = (data) => {
 
   const ataquesEspeciales = ataques.reduce((acc, attack) => {
     const existingAttack = acc.find(item => item.attack === attack.attack);
-    console.log(existingAttack);
+    
     if (!existingAttack) {
       acc.push(attack);
     } else if (attack.damage > existingAttack.damage) {

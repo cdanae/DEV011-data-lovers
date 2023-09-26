@@ -93,6 +93,19 @@ select[data-testid="select-filter"]:hover {
   background-color: #254A8F;
 }
 
+#clear-button {
+  background-color: #4270c4;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  height: 37px;
+}
+
 main {
   width: 80%;
   margin: 0 auto;

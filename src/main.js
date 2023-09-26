@@ -10,11 +10,11 @@ let pokemonFilter = [];
 
 root.appendChild(renderItems(dataPokemon));
 
-const filtrarButton = document.getElementById('filtrar-button');
-const filtrarOptions = document.getElementById('filtrar-options');
-const selectType = document.getElementById('tipo');
-const selectRegion = document.getElementById('region');
-const clearButton = document.getElementById('clear-button');
+const filtrarButton = document.querySelector('#filtrar-button');
+const filtrarOptions = document.querySelector('#filtrar-options');
+const selectType = document.querySelector('#tipo');
+const selectRegion = document.querySelector('#region');
+const clearButton = document.querySelector('#clear-button');
 
 filtrarButton.addEventListener('click', () => {
   filtrarOptions.classList.toggle('mostrar');
@@ -44,18 +44,18 @@ const ordenarOptions = document.getElementById('ordenar-options');
 ordenarButton.addEventListener('click', () => {
   ordenarOptions.classList.toggle('mostrar');
 
-//Verificar si la data esta filtrada y proceder a ordenarla
+  //Verificar si la data esta filtrada y proceder a ordenarla
   if (isDataFiltered) {
     ordenarOptions.addEventListener('click', (event) => {
-     if (event.target.tagName === 'BUTTON') {
-      const selectedOption = event.target.getAttribute('data-orden');
-      const [property, order] = selectedOption.split('-');
+      if (event.target.tagName === 'BUTTON') {
+        const selectedOption = event.target.getAttribute('data-orden');
+        const [property, order] = selectedOption.split('-');
 
-      const sortedPokemon = ordenarPokemon(pokemonFilter, property, order);
-      renderItems(sortedPokemon);
-      ordenarOptions.classList.remove('mostrar');
-     }   
-  });
+        const sortedPokemon = ordenarPokemon(pokemonFilter, property, order);
+        renderItems(sortedPokemon);
+        ordenarOptions.classList.remove('mostrar');
+      }   
+    });
   } else {
     ordenarOptions.addEventListener('click', (event) => {
       if (event.target.tagName === 'BUTTON') {
@@ -67,8 +67,8 @@ ordenarButton.addEventListener('click', () => {
         ordenarOptions.classList.remove('mostrar');
       }
     });
-   } 
-  });
+  } 
+});
 
 const statsButton = document.getElementById('stats-button');
 statsButton.addEventListener('click', () => {
@@ -99,7 +99,7 @@ statsButton.addEventListener('click', () => {
 
 
 clearButton.addEventListener('click', () => {
-  console.log('Botón de limpieza clicado');
+  
   isDataFiltered = false;
   pokemonFilter = [];
   const main = document.querySelector('main')

@@ -102,7 +102,16 @@ clearButton.addEventListener('click', () => {
   console.log('Botón de limpieza clicado');
   isDataFiltered = false;
   pokemonFilter = [];
-  root.innerHTML = ''; // Limpia el contenido actual
-  root.appendChild(renderItems(dataPokemon)); // Vuelve a mostrar todos los Pokémon
+  const main = document.querySelector('main')
+  const mainOriginal = `
+  <h2>Lista de Pokémon</h2>
+  <div id="root"><ul id="listaPokemon"></ul></div>  
+    
+  <div id="tablaContainer" style="display: none;">
+    
+</div>  
+`
+  main.innerHTML = mainOriginal
+  return renderItems(dataPokemon); // Vuelve a mostrar todos los Pokémon
 });
 

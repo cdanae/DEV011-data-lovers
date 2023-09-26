@@ -2,79 +2,64 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 2rem;
 }
 
 header{
-  text-align:center;
-  background-color: #254A8F ;
-  position:relative;
-  top: 0;
+  width: 100%;
+  background-color: #254A8F;
+  height: 130px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height:auto;
-  padding: 20px;
 }
 
 h1 {
-  margin: 0;
-  padding-top: 20px;
-  font-size: 60px;
-  color: #FFF;
+  font-size: 30px;
+  color: #fff;
   text-shadow: 2px 2px #385CAA;
 }
   
 header img {
-  max-width: 25%;
+  width: 25%;
   height: auto;
   position: absolute; 
   top: 0; 
   left: 0; 
   margin: 10px;
-  padding: 10px;
 }
 
-h2 {
-  margin: 0;
-  padding-top: 20px;
-  font-size: 40px;
-  color: #000000;
-}
-nav {
-  width: 50%;
-}
 .buttons-container {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin: 0 auto;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 .li-btns {
   list-style: none;
-  margin: 10px;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25)
+  margin: 0px 10px 10px 10px;
+}
+.dropdown button {
+  background-color: #4270c4;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
 }
 
-.filtrar-options {
+.ordenar-options,.filtrar-options {
   display: none;
   position: absolute;
   background-color: #4270c4;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 1;
-}
-
-.dropdown button {
-  background-color: #4270c4;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 10px 0px;
 }
 
 select[data-testid="select-filter"] {
@@ -88,16 +73,6 @@ select[data-testid="select-filter"]:hover {
   cursor: pointer;
   background-color: #254A8F;
 
-}
-
-
-.ordenar-options, .filtrar-options{
-  display: none;
-  position: absolute;
-  background-color: #4270c4;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 1;
 }
 
 .mostrar {
@@ -118,92 +93,82 @@ select[data-testid="select-filter"]:hover {
   background-color: #254A8F;
 }
 
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .estilos-tabla {
   background-color:#EACA4C ;
   color: #254A8F;
-  border-radius: 8px;
-  margin: 120px;
-  padding: 20px;
+  text-align: center;
   
 }
 table {
   margin: auto;
-  width: 70%;
-  margin-top: 45px;
+  width: 90%;
+  margin-top: 25px;
   text-transform:capitalize;
 }
-
+td {
+  padding: 5px 16px;
+}
+h2 {
+  margin: 0;
+  padding-top: 30px;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+}
 
 #listaPokemon {
-  display:flex;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.li-card {
+  list-style: none;
+  background: radial-gradient(circle, rgba(241,241,241,1) 35%, rgba(139,198,245,1) 100%);
+  width: 260px;
+  height: 400px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .20);
+  margin-bottom: 20px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  margin: 0 auto;
 }
-
-.tarjeta-container {
-  width: 50%; 
-  height: auto;
-  border: 1px solid #ccc; 
-  box-shadow: rgb(31 63 223 / 50%) 2px 4px 8px; 
-  margin: 50px 50px  0; 
-  border-radius: 1rem;
-  background: radial-gradient(circle, rgba(241,241,241,1) 35%, rgba(139,198,245,1) 100%) ;
-  align-items:flex-start;
-  gap: 1rem;
-  padding-block: 1rem;
-  position: relative;
-  overflow: hidden;
-
-}
-
 
 .tarjeta {
-  width: 380px;
-  height: 500px;
+  width: 90%;
+  height: 350px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 auto;
   display:flex;
   flex-direction:column;
   align-items:center;
-  text-align: center;
-  font-weight: bold;
+
+}
+dd {
   margin: 0;
-  text-transform: uppercase;
-  padding: 10px;
-  box-sizing: border-box;
-  position: relative;
 }
 
-/* Estilo para la imagen del Pokémon */
-.pokemon.img {
-  max-width: 100px;
-  height: auto;
-  margin: 10px auto;
-  padding: 1rem;
-  display:flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
+dd img {
+  width: 155px;
+  height: 155px;
 
-/* Estilo para el número y nombre del Pokémon */
-.tarjeta p {
-  text-align: center;
-  font-weight: bold;
-  margin: 0;
 }
 
 .caracteristicas {
   display: flex;
-  justify-content: center;
-  align-items: flex-start; 
-  margin-top: 20px;
-  padding: 0 10px; 
-  position: absolute;
-  bottom: 0;
+  justify-content: space-between;
+  color: #254A8F;
   width: 90%;
-  gap: 1rem;
-  padding-inline: 1rem;
+  margin-top: 10px;
+  text-transform: capitalize;
 }
 
 /* Estilo para el contenedor de "resistant" y "weaknesses" */
@@ -214,120 +179,94 @@ table {
   
 }
 
-/* Estilo para las etiquetas "resistant" y "weaknesses" */
-.resistant p,
-.weaknesses p {
-  font-weight: bold;
-  margin: 0;
-  font-size: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5rem;
-  display: flex;
-  
-  
-}
-
-/* Estilo para las listas de "resistant" y "weaknesses" */
-.resistant ul,
-.weaknesses ul {
-  list-style:none;
-  padding: 0;
-  margin: 0;
-  
-}
-
-
 /* Estilo para los elementos de la lista */
 .resistant ul,
 .weaknesses ul {
-  margin-bottom: 5px;
-  margin-top: 4px;
+  list-style: none;
+  padding: 10px;
+  font-weight: 400;
   font-size: 14px;
   text-transform: capitalize; 
 }
-
+.btn-masInfo {
+  border: none;
+  width: 50%;
+  background: transparent;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  text-decoration-line: underline;
+  color: #4270c4;
+  margin: 0 auto;
+}
 /* Estilo para el reverso de la carta */
 .back {
   display: none;
 }
-
-
-main {
-  width: 80%;
-  margin: 0 auto;
-}
-.btn-container {
-  margin-top: 10px;
+  
+/* Estilos para la parte trasera de la tarjeta */
+.back {
+  background-color: #e0e0e0; /* Color de fondo de la parte trasera */
+  padding: 20px; /* Espaciado dentro de la parte trasera */
+  display: none; /* Oculta inicialmente la parte trasera */
 }
 
-ul{
-  padding: 0;
+/* Estilo para el texto en la parte trasera */
+.back p {
+  margin: 0; /* Elimina el margen predeterminado de los párrafos */
 }
 
-.li-card {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-dd {
-  margin: 0;
-}
-
-@media (min-width: 768px) {
-  .tarjeta-container {
-    width: 70%; 
-    
-}
-#listaPokemon {
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction: row;
-}
-}
-@media (min-width: 1024px) {
-  header img {
-    width: 285px; 
-    height: 178px;
-    
-}
-}
 footer {
   background-color:#254A8F ;
   color:#FFF;
   font-size: 14px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
 }
-/* .tarjeta{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+footer p {
+  margin: 0;
+  margin-top: 5px;
+}
 
-} */
-  
-  /* Estilos para la parte frontal de la tarjeta */
-  .front {
-    background-color: #f0f0f0; /* Color de fondo de la parte frontal */
-    padding: 20px; /* Espaciado dentro de la parte frontal */
+@media (min-width: 768px) {
+  header img {
+    height: 95px;
+    width: 160px;
+  }
+  #listaPokemon {
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  table {
+    width: 70%;
   }
   
-  /* Estilos para la parte trasera de la tarjeta */
-  .back {
-    background-color: #e0e0e0; /* Color de fondo de la parte trasera */
-    padding: 20px; /* Espaciado dentro de la parte trasera */
-    display: none; /* Oculta inicialmente la parte trasera */
+}
+
+@media (min-width: 1024px) {
+  header {
+    height: 190px;
   }
-  
-  /* Estilo para el texto en la parte trasera */
-  .back p {
-    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+  header img {
+    width: 285px;
+    height: 178px;
   }
-  
-  /* Estilo para la imagen dentro de la tarjeta */
-  .imagenPokemon {
-    max-width: 100%; /* Evitar que la imagen se agrande más allá de su tamaño original */
-    height: auto; /* Mantener la relación de aspecto original de la imagen */
+  h1 {
+    font-size: 48px;
   }
+  .dropdown button {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  main {
+    width: 100%;
+  }
+}
+

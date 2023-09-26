@@ -79,7 +79,7 @@ statsButton.addEventListener('click', () => {
     <table>
       <thead class= "estilos-tabla">
         <tr>
-          <th>Ataque</th>
+          <th>Ataque especial</th>
           <th>Daño</th>
         </tr>
       </thead>
@@ -96,25 +96,7 @@ statsButton.addEventListener('click', () => {
   main.innerHTML = statsContainer
   
 })
-const tiposDePokemon = { fire: "🔥",
-water: "💧",
-grass: "🌿",
-electric: "⚡",
-ground: "🌍",
-flying: "🦅",
-poison: "☠️",
-psychic: "🔮",
-fighting: "🥊",
-ice: "❄️",
-rock: "🪨",
-bug: "🐞",
-dragon: "🐉",
-ghost: "👻",
-steel: "🔩",
-normal: "⚪",
-dark: "🌑",
-fairy: "🧚‍♀️"
-}
+
 
 clearButton.addEventListener('click', () => {
   console.log('Botón de limpieza clicado');
@@ -123,3 +105,4 @@ clearButton.addEventListener('click', () => {
   root.innerHTML = ''; // Limpia el contenido actual
   root.appendChild(renderItems(dataPokemon)); // Vuelve a mostrar todos los Pokémon
 });
+

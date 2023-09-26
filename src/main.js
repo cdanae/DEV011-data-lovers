@@ -14,6 +14,7 @@ const filtrarButton = document.getElementById('filtrar-button');
 const filtrarOptions = document.getElementById('filtrar-options');
 const selectType = document.getElementById('tipo');
 const selectRegion = document.getElementById('region');
+const clearButton = document.getElementById('clear-button');
 
 filtrarButton.addEventListener('click', () => {
   filtrarOptions.classList.toggle('mostrar');
@@ -114,3 +115,11 @@ normal: "⚪",
 dark: "🌑",
 fairy: "🧚‍♀️"
 }
+
+clearButton.addEventListener('click', () => {
+  console.log('Botón de limpieza clicado');
+  isDataFiltered = false;
+  pokemonFilter = [];
+  root.innerHTML = ''; // Limpia el contenido actual
+  root.appendChild(renderItems(dataPokemon)); // Vuelve a mostrar todos los Pokémon
+});

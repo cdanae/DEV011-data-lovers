@@ -8,7 +8,7 @@ export const filterBy = (data, filterBy, value) => {
     );
     break;
 
-  case 'tipo':
+  case 'type':
     pokemonFilter = data.filter((data) => {
       const findType = data.type.find((e) => e === value);
       return findType;
@@ -63,7 +63,7 @@ export const computeStats = (data) => {
     }
     return acc;
   }, []).sort((a, b) => b.damage - a.damage).slice(0, 15);
-  
+  console.log(ataquesEspeciales);
   return ataquesEspeciales
 }
 

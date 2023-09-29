@@ -30,7 +30,7 @@ selectRegion.addEventListener('change', () => {
 
 selectType.addEventListener('change', () => {
   const selectedTypeOption = selectType.value;
-  pokemonFilter = filterBy(dataPokemon, 'tipo', selectedTypeOption);
+  pokemonFilter = filterBy(dataPokemon, 'type', selectedTypeOption);
   isDataFiltered = true; 
   renderItems(pokemonFilter );
   filtrarOptions.classList.remove('mostrar');
@@ -61,6 +61,7 @@ ordenarButton.addEventListener('click', () => {
       if (event.target.tagName === 'BUTTON') {
         const selectedOption = event.target.getAttribute('data-orden');
         const [property, order] = selectedOption.split ('-');
+        console.log(property, order);
 
         const sortedPokemon = ordenarPokemon(dataPokemon, property, order);
         renderItems(sortedPokemon);

@@ -1,18 +1,43 @@
-import { example, anotherExample } from '../src/dataFunctions.js';
+import { ordenarPokemon } from '../src/dataFunctions.js';
 //import { data as fakeData } from './data.js';
 
 
+/*const testData = [
+  {id: 1, name: 'Bulbasaur'},
+  {id: 2, name: 'Charmander'},
+  {id: 3, name: 'Squirtle'}
+];
 
-describe('example', () => {
+test('ordenarPokemon ordena correctamente en orden ascendente' , () => {
+  const property = 'name';
+  const order = 'asc' ;
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  const result = ordenarPokemon(testData, property, order);
+  const expected = [
+    {id: 2, name: 'Charmander'},
+    {id: 1, name: 'Bulbasaur'},
+    {id: 3, name: 'Squirtle'},
+  ];
+
+  expect(result).toEqual(expected);
 });
 
-describe('anotherExample', () => {
+test('ordenarPokemon ordena correctamente en orden descendente', () => {
+  const property = 'name';
+  const order = 'desc';
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+  const result = ordenarPokemon (testData, property, order);
+
+  const expected = [
+    {id: 3, name: 'Squirtle'},
+    {id: 1, name: 'Bulbasaur'},
+    {id: 2, name: 'Charmander'},
+  
+  ];
+
+  expect(result).toEqual(expected);
+});*/
+
+
+
+

@@ -67,9 +67,14 @@ export const renderItems = (data) => {
       `;
   
     li.innerHTML = cartaPokemon;
-  
       
+    const btnMasInfo = li.querySelector('.btn-masInfo');
+    btnMasInfo.addEventListener('click', () => {
+      console.log('Botón de esta tarjeta clickeado:', pokemon.name);
+    })
     listaPokemon.appendChild(li);
+
+
   });
   return listaPokemon;
 }

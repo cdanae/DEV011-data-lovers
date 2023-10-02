@@ -17,6 +17,7 @@ export const filterBy = (data, filterBy, value) => {
 
     
   default:
+    pokemonFilter = [];
     break;
   }
 
@@ -38,7 +39,6 @@ export const ordenarPokemon = (data,property, order) => {
 
   sortedPokemon.sort(compareFunction);
 
-  //renderItems({ pokemon: sortedPokemon });
   return sortedPokemon;
 };
 
@@ -57,10 +57,7 @@ export const computeStats = (data) => {
     
     if (!existingAttack) {
       acc.push(attack);
-    } else if (attack.damage > existingAttack.damage) {
-      existingAttack.damage = attack.damage;
-      existingAttack.pokemon = attack.pokemon;
-    }
+    } 
     return acc;
   }, []).sort((a, b) => b.damage - a.damage).slice(0, 15);
   console.log(ataquesEspeciales);

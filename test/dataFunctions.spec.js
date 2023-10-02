@@ -1,5 +1,5 @@
 import { filterBy, ordenarPokemon, computeStats } from '../src/dataFunctions.js';
-import { data as fakeData } from './data.js';
+import { dataTestU as fakeData } from './data.js';
 
 const POKEMON_REGION_KANTO =  [{
   "num": "001",

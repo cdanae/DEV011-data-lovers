@@ -107,7 +107,7 @@ export const renderItems = (data) => {
     }
 
     const cartaPokemon = `
-      <dl itemscope itemtype="pokemon" class="tarjeta">
+      <dl itemscope itemtype="pokemon" class="tarjeta front">
         <dd itemprop="name">${pokemon.name}</dd>
         <dd itemprop="image">
           <img src="${pokemon.img}" alt="${pokemon.name}">
@@ -130,12 +130,23 @@ export const renderItems = (data) => {
         </div>
       </dl>
       <button class="btn-masInfo">Ver más...</button>
+      <div class="back">
+        <p class="card-back">${pokemon.name}</p>
+      </div>
+      
       `;
   
     li.innerHTML = cartaPokemon;
-  
       
+    const btnMasInfo = li.querySelector('.btn-masInfo');
+    const contenidoBack = li.querySelector('.back')
+    btnMasInfo.addEventListener('click', () => {
+      contenidoBack.querySelector('.card-back').textContent = pokemon.name;
+      li.classList.toggle('is-flipped');
+    });
     listaPokemon.appendChild(li);
+
+
   });
   return listaPokemon;
 }

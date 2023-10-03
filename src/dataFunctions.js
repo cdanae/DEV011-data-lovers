@@ -60,7 +60,6 @@ export const computeStats = (data) => {
     } 
     return acc;
   }, []).sort((a, b) => b.damage - a.damage).slice(0, 15);
-  console.log(ataquesEspeciales);
   return ataquesEspeciales
 }
 

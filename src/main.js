@@ -61,7 +61,6 @@ ordenarButton.addEventListener('click', () => {
       if (event.target.tagName === 'BUTTON') {
         const selectedOption = event.target.getAttribute('data-orden');
         const [property, order] = selectedOption.split ('-');
-        console.log(property, order);
 
         const sortedPokemon = ordenarPokemon(dataPokemon, property, order);
         renderItems(sortedPokemon);

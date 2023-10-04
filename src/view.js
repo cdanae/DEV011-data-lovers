@@ -129,7 +129,6 @@ export const renderItems = (data) => {
           </div>
         </div>
       </dl>
-      <button class="btn-masInfo">Ver más...</button>
       `;
   
     li.innerHTML = cartaPokemon;

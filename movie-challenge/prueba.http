@@ -1,0 +1,3 @@
+GET https://api.themoviedb.org/3/discover/movie
+GET https://api.themoviedb.org/3/discover/movie?api_key=1db8b0e3b4bab33d5ff7f06b7cbf4bc4
+GET https://api.themoviedb.org/3/discover/movie?api_key=1db8b0e3b4bab33d5ff7f06b7cbf4bc4&page=2

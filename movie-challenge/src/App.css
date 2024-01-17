@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo Básico para el Cuerpo de la Página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Contenedor Principal para la Lista de Películas */
+#movie-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo para el Título de la Página */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la Lista de Películas */
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Estilo para Cada Elemento de la Lista de Películas */
+li {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto de Sombra al Pasar el Ratón sobre Cada Película */
+li:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen de la Película */
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Estilo para el Título de la Película */
+p {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Estilo para el Año de Lanzamiento de la Película */
+.release-year {
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
